@@ -4,7 +4,7 @@ const counter = (state = 0, action: { type: string }) => {
       return state + 1;
 
     case "DECREMENT":
-      return state - 1;
+      return Math.max(state - 1, 0);
 
     default:
       return state;
