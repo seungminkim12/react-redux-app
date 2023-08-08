@@ -1,14 +1,15 @@
-const counter = (state = 0, action: { type: string }) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return state + 1;
+import { combineReducers } from "redux";
+import counter from "./counter";
+import todos from "./todos";
 
-    case "DECREMENT":
-      return Math.max(state - 1, 0);
-
-    default:
-      return state;
-  }
+type ReducerType = {
+  counter: number;
+  todos: string[];
 };
 
-export default counter;
+const rootReducer = combineReducers({
+  counter,
+  todos,
+});
+
+export default rootReducer;

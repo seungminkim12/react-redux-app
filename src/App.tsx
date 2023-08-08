@@ -1,7 +1,11 @@
 import "./App.css";
 
 type OwnProps = {
-  value: number;
+  // value: number | string;
+  value: {
+    counter: number;
+    todos: string[];
+  };
   onIncrement(): void;
   onDecrement(): void;
 };
@@ -9,7 +13,7 @@ type OwnProps = {
 function App(props: OwnProps) {
   return (
     <div className="App">
-      Clicked: {props.value} times
+      Clicked: {props.value.counter} times
       <button onClick={props.onIncrement}>+</button>
       <button onClick={props.onDecrement}>-</button>
     </div>
