@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import counter from "./counter";
 import todos from "./todos";
+import posts from "./posts";
 
 type ReducerType = {
   counter: number;
@@ -10,6 +11,7 @@ type ReducerType = {
 const rootReducer = combineReducers({
   counter,
   todos,
+  posts,
 });
 
 export default rootReducer;
